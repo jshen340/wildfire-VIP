@@ -1,6 +1,48 @@
 # Wildfire VIP
 Wildfire prediction and simulation for VIP with Prof. Bo Zhu and mentor Duowen.
 
+## Current Results
+The Mean Absolute Error of the model's predictions on the test dataset is 297.64 after 50 epochs.
+
+Below are some example temperature predictions on 7 images. Images can be found in the `CandleFire3000-5000K` folder.
+
+```
+Image: candle3_3087.5K.png
+Predicted temperature: 4249.16K
+Actual temperature: 3087.50K
+Absolute error: 1161.66K
+
+Image: candle46_4341.7K.png
+Predicted temperature: 4028.54K
+Actual temperature: 4341.70K
+Absolute error: 313.16K
+
+Image: candle381_5858.3K.png
+Predicted temperature: 5891.45K
+Actual temperature: 5858.30K
+Absolute error: 33.15K
+
+Image: candle361_6441.7K.png
+Predicted temperature: 6589.43K
+Actual temperature: 6441.70K
+Absolute error: 147.73K
+
+Image: candle338_7112.5K.png
+Predicted temperature: 7567.24K
+Actual temperature: 7112.50K
+Absolute error: 454.74K
+
+Image: candle185_8395.8K.png
+Predicted temperature: 8769.85K
+Actual temperature: 8395.80K
+Absolute error: 374.05K
+
+Image: candle231_9737.5K.png
+Predicted temperature: 9553.99K
+Actual temperature: 9737.50K
+Absolute error: 183.51K
+```
+
 ## Training
 Run `python3 cnn_train.py`.
 
