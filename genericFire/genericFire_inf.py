@@ -20,13 +20,13 @@ def load_and_preprocess_image(file_path):
 # Function to extract temperature from filename
 def extract_temperature(filename):
     try:
-        return float(filename.split('_')[1].split('K')[0])
+        return float(filename.split('_')[2].split('K')[0])
     except Exception as e:
         print(f"Error extracting temperature from {filename}: {str(e)}")
         return None
 
 # Load the saved model
-model = tf.keras.models.load_model('candle_temperature_model.h5')
+model = tf.keras.models.load_model('genericFire_temperature_model.h5')
 
 # Function to predict temperature for a new image
 def predict_temperature(image_path):
@@ -39,11 +39,11 @@ def predict_temperature(image_path):
         return None
 
 # Load test set filenames
-with open('test_set_filenames.txt', 'r') as f:
+with open('genericFire_test_set_filenames.txt', 'r') as f:
     test_files = f.read().splitlines()
 
 # Data directory
-data_dir = 'CandleFire3000-10000K'
+data_dir = 'GenericFire3000-5000K'
 
 # Function to predict for a specific image
 def predict_for_specific_image(image_filename):
@@ -78,13 +78,9 @@ if __name__ == "__main__":
     
     # Inference on several images
     selected_images = [
-        "candle3_3087.5K.png",
-        "candle46_4341.7K.png",
-        "candle381_5858.3K.png",
-        "candle361_6441.7K.png",
-        "candle338_7112.5K.png",
-        "candle185_8395.8K.png",
-        "candle231_9737.5K.png",
+        "generic_fire16_3089.1K.png",
+        "generic_fire301_4676.9K.png",
+        "generic_fire346_4927.6K.png",
     ]
     run_inference_on_selected_images(selected_images)
     
