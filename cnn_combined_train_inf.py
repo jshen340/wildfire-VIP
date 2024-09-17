@@ -33,7 +33,7 @@ def extract_temperature(filename):
         return None
 
 # Load and preprocess data
-data_dir = 'CandleFire3000-5000K'
+data_dir = 'CandleFire3000-10000K'
 image_files = [f for f in os.listdir(data_dir) if f.endswith('.png')]
 temperatures = [extract_temperature(f) for f in image_files]
 

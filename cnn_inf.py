@@ -43,7 +43,7 @@ with open('test_set_filenames.txt', 'r') as f:
     test_files = f.read().splitlines()
 
 # Data directory
-data_dir = 'CandleFire3000-5000K'
+data_dir = 'CandleFire3000-10000K'
 
 # Function to predict for a specific image
 def predict_for_specific_image(image_filename):
