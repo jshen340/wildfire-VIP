@@ -84,9 +84,9 @@ def predict_temperature(image_path):
     else:
         return None
 
-# Example usage with a random test image
-random_test_image = random.choice(test_files)
-test_image_path = os.path.join(data_dir, random_test_image)
+# Example usage with a random test image or manually selected image (should be from test set)
+random_test_image = "candle199_8804.2K" #random.choice(test_files)
+test_image_path = "candle199_8804.2K.png" #os.path.join(data_dir, random_test_image)
 predicted_temperature = predict_temperature(test_image_path)
 actual_temperature = extract_temperature(random_test_image)
 
