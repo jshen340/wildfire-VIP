@@ -5,8 +5,9 @@ Fire prediction and simulation for VIP with Prof. Bo Zhu and mentor Duowen.
 Data generated using [GPU-GEMS-3D-Fluid-Simulation](https://github.com/Scrawk/GPU-GEMS-3D-Fluid-Simulation) GPU based simulation in Unity. We use a simple CNN with L2 regularization to predict the Temperature Amount parameter from image, based on the flame shape, smoke amount, and color.
 
 ## Results
-The Mean Absolute Error of the model's predictions on the test dataset is 10.53 after 150 epochs (LR=0.0001, batch_size=16).
-We take two different images of the fire per each "Temperature Amount", which ranges from 5 to 200. So, we have 390 synthetic images. We use 80% as training data and 20% as test data.
+The "Temperature Amount" parameter range is [5, 200]. The Mean Absolute Error of the model's predictions on the test dataset is 10.53 after 150 epochs, with LR=0.0001, batch_size=16. The MAE expressed as a percentage of the output range is 5.4%.
+
+We take two images of the fire per "Temperature Amount," so we have 390 synthetic images. We use 80% as training data and 20% as test data.
 
 Below are some example temperature predictions on 3 images. Images can be found in the `unitySim/UnitySim5-200` folder.
 ```
@@ -33,7 +34,7 @@ Below is a graph of the MAE per each image in the test set, with the X axis bein
 # Embergen Generic Fire
 Synthetic data generated in Embergen of a thin candle flame. We use a CNN to predict temperature from image, due to flame shape and color.
 ## Results
-The Mean Absolute Error of the model's predictions on the test dataset is 39.92 after 50 epochs.
+The Mean Absolute Error of the model's predictions on the test dataset is 39.92 after 50 epochs. The MAE expressed as a percentage of the output range is 1.996%.
 
 Below are some example temperature predictions on 3 images. Images can be found in the `genericFire/GenericFire3000-5000K` folder.
 
@@ -72,7 +73,7 @@ You can also uncomment the first few lines in `__main__` to run inference on a *
 Synthetic data generated in Embergen of a thin candle flame. We use a CNN to predict temperature from image, due to candle shape and color.
 
 ## Results
-The Mean Absolute Error of the model's predictions on the test dataset is 297.64 after 50 epochs.
+The Mean Absolute Error of the model's predictions on the test dataset is 297.64 after 50 epochs. The MAE expressed as a percentage of the output range is 14.882%.
 
 Below are some example temperature predictions on 7 images. Images can be found in the `candle/CandleFire3000-10000K` folder.
 
