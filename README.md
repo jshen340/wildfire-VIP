@@ -1,4 +1,4 @@
-# Wildfire VIP
+# Graphical Simulation of Fire for Machine Learning
 Fire prediction and simulation for VIP with Prof. Bo Zhu and mentor Duowen.
 
 # Unity Sim
