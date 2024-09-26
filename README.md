@@ -26,7 +26,8 @@ Actual temperature: 197.00
 Absolute error: 21.56
 ```
 
-Below is a graph of the MAE per each image in the test set, with the X axis being test set images. Images are ordered from lowest temperature (01) to highest temperature().
+Below is a graph of the MAE per each image in the test set, with the X axis being test set images. Images are ordered from lowest temperature (6) to highest temperature(199).
+![Test MAE Graph](unitySim/test_MAE_graph.png)
 
 
 # Embergen Generic Fire
