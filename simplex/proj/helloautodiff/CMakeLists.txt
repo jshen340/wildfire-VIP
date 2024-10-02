@@ -1,0 +1,28 @@
+cmake_minimum_required(VERSION 3.18)
+set(proj_name helloautodiff)
+project(${proj_name})
+include(${PROJECT_SOURCE_DIR}/../../../simplex/script/functions.cmake)
+
+macro(init_project _simplex_path)
+  set_compiling_flags()
+	#set platform
+	if(WIN32)
+		set(platform win)
+	elseif(UNIX)
+		set(platform unix)
+	endif(WIN32)
+  #set paths
+  new_var_with_def(simplex_path -DROOT_PATH ${_simplex_path})
+  set(prjplex_path ${CMAKE_CURRENT_SOURCE_DIR}/../..)
+  new_var_with_def(proj_src_path -DPROJ_PATH ${PROJECT_SOURCE_DIR})
+  new_var_with_def(data_path -DDATA_PATH ${simplex_path}/data)
+  new_var_with_def(script_path -DSCRIPT_PATH ${simplex_path}/script)
+  set(exe_output_path ${prjplex_path}/bin/${platform}/${proj_name})
+  set(ext_lib_path ${simplex_path}/lib/ext)
+  set(src_lib_path ${simplex_path}/lib/simplex)#That will be seen in ext()
+endmacro(init_project)
+
+init_project(${PROJECT_SOURCE_DIR}/../../../simplex)
+add_subdirectory(forward)
+add_subdirectory(reverse)
+add_subdirectory(custom)

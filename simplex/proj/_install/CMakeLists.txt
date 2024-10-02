@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.18)
+set(proj_name _install)
+project(${proj_name})
+include(${PROJECT_SOURCE_DIR}/../../../simplex/script/functions.cmake)
+init_project(${PROJECT_SOURCE_DIR}/../../../simplex)
+install_all_ext_libs()
+#use_src_libs(COMPILE "")
+setup_exe_target()

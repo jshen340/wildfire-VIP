@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.18)
+set(proj_name mpm)
+project(${proj_name})
+include(${PROJECT_SOURCE_DIR}/../../script/functions.cmake)
+init_project(${PROJECT_SOURCE_DIR}/../../../simplex)
+use_ext_libs(LINK "cuda;openmp;physbam;")
+use_src_libs(SELF "physics;")
+setup_exe_target()
