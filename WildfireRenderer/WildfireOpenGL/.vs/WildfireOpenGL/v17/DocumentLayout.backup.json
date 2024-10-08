@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tonyy\\Documents\\School-Work\\VIP\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{93B17D41-D29D-40A1-AC95-9120A3DF514E}|WildfireOpenGL.vcxproj|C:\\Users\\tonyy\\Documents\\School-Work\\VIP\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{93B17D41-D29D-40A1-AC95-9120A3DF514E}|WildfireOpenGL.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\tonyy\\Documents\\School-Work\\VIP\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "C:\\Users\\tonyy\\Documents\\School-Work\\VIP\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-08T22:49:44.687Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
