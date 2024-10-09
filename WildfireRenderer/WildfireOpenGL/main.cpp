@@ -1,6 +1,12 @@
 #include<iostream>
 #include<glad/glad.h>
 #include<GLFW/glfw3.h>
+#include <fstream>
+#include <sstream>
+#include <string>
+
+#define GL_VERTEX_SHADER 0x8B31
+#define GL_FRAGMENT_SHADER 0x8B30
 
 #pragma region Shader Source
 /// <summary>
@@ -39,39 +45,75 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
 }
 
-unsigned int compileShader(unsigned int type, const char* source) {
-	unsigned int shader = glCreateShader(type);
-	glShaderSource(shader, 1, &source, NULL);
-	glCompileShader(shader);
+std::string readShaderFile(const std::string& filePath) {
+	std::ifstream shaderFile;
+	shaderFile.open(filePath);
 
-	int success;
-	char infoLog[512];
-	glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
-	if (!success) {
-		glGetShaderInfoLog(shader, 512, NULL, infoLog);
-		std::cerr << "ERROR::SHADER::COMPILATION_FAILED\n" << infoLog << std::endl;
+	if (!shaderFile.is_open()) {
+		std::cerr << "Failed to open shader file: " << filePath << std::endl;
+		return "";
 	}
 
-	return shader;
+	std::stringstream shaderStream;
+	shaderStream << shaderFile.rdbuf();  // Read file's buffer contents into a string stream
+	shaderFile.close();  // Close file handler
+
+	return shaderStream.str();  // Convert stream into string
 }
 
-unsigned int createShaderProgram() {
-	unsigned int vertexShader = compileShader(GL_VERTEX_SHADER, vertexShaderSource);
-	unsigned int fragmentShader = compileShader(GL_FRAGMENT_SHADER, fragmentShaderSource);
+unsigned int compileShader(const std::string& vertexPath, const std::string& fragmentPath) {
+	// Step 1: Read shader files
+	std::string vertexCode = readShaderFile(vertexPath);
+	std::string fragmentCode = readShaderFile(fragmentPath);
 
+	if (vertexCode.empty() || fragmentCode.empty()) {
+		std::cerr << "Shader code loading failed." << std::endl;
+		return 0;  // Error handling
+	}
+
+	const char* vertexShaderSource = vertexCode.c_str();
+	const char* fragmentShaderSource = fragmentCode.c_str();
+
+	// Step 2: Compile Vertex Shader
+	unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+	glCompileShader(vertexShader);
+
+	// Check compilation status
+	int success;
+	char infoLog[512];
+	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+	if (!success) {
+		glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+		std::cerr << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
+	}
+
+	// Step 3: Compile Fragment Shader
+	unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+	glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+	glCompileShader(fragmentShader);
+
+	// Check compilation status
+	glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
+	if (!success) {
+		glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
+		std::cerr << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
+	}
+
+	// Step 4: Link Shaders
 	unsigned int shaderProgram = glCreateProgram();
 	glAttachShader(shaderProgram, vertexShader);
 	glAttachShader(shaderProgram, fragmentShader);
 	glLinkProgram(shaderProgram);
 
-	int success;
-	char infoLog[512];
+	// Check linking status
 	glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
 	if (!success) {
 		glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
-		std::cerr << "ERROR::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
+		std::cerr << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
 	}
 
+	// Step 5: Clean up
 	glDeleteShader(vertexShader);
 	glDeleteShader(fragmentShader);
 
@@ -110,8 +152,13 @@ int main() {
 	glViewport(0, 0, 800, 600);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-	//Compile & link shaders
-	unsigned int shaderProgram = createShaderProgram();
+	//Compile & link shaders, refactor to make path a local member
+	unsigned int shaderProgram = compileShader("fire_vert.vert", "fire_frag.frag");
+
+	// IMPORTANT: set shadertoy uniforms
+	int iTimeLocation = glGetUniformLocation(shaderProgram, "iTime");
+	int iResolutionLocation = glGetUniformLocation(shaderProgram, "iResolution");
+
 
 	//Setup vertices before render loop -> renders quad that maps to screen dimensions
 	float vertices[] = {
