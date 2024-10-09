@@ -8,39 +8,6 @@
 #define GL_VERTEX_SHADER 0x8B31
 #define GL_FRAGMENT_SHADER 0x8B30
 
-#pragma region Shader Source
-/// <summary>
-/// Vertex shader source, should not need to be edited since
-/// shadertoy only exposes the fragment shader
-/// </summary>
-const char* vertexShaderSource = R"(
-#version 330 core
-layout (location = 0) in vec2 aPos;
-
-void main() {
-    gl_Position = vec4(aPos, 0.0, 1.0);
-}
-)";
-
-/// <summary>
-/// Vertex shader source, should not need to be edited since
-/// shadertoy only exposes the fragment shader
-/// </summary>
-const char* fragmentShaderSource = R"(
-#version 330 core
-out vec4 FragColor;
-
-uniform vec3 iResolution;
-uniform float iTime;
-
-void main() {
-    vec2 uv = gl_FragCoord.xy / iResolution.xy;
-    vec3 col = 0.5 + 0.5 * cos(iTime + uv.xyx + vec3(0, 2, 4));
-    FragColor = vec4(col, 1.0);
-}
-)";
-#pragma endregion Shader Source
-
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
 }
