@@ -1,10 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\tonyy\\Documents\\School-Work\\VIP\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\",
+  "WorkspaceRootPath": "C:\\Users\\jocel\\Documents\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{93B17D41-D29D-40A1-AC95-9120A3DF514E}|WildfireOpenGL.vcxproj|C:\\Users\\tonyy\\Documents\\School-Work\\VIP\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{93B17D41-D29D-40A1-AC95-9120A3DF514E}|WildfireOpenGL.vcxproj|C:\\Users\\jocel\\Documents\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{93B17D41-D29D-40A1-AC95-9120A3DF514E}|WildfireOpenGL.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B17D41-D29D-40A1-AC95-9120A3DF514E}|WildfireOpenGL.vcxproj|C:\\Users\\jocel\\Documents\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\fire_vert.vert||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{93B17D41-D29D-40A1-AC95-9120A3DF514E}|WildfireOpenGL.vcxproj|solutionrelative:fire_vert.vert||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B17D41-D29D-40A1-AC95-9120A3DF514E}|WildfireOpenGL.vcxproj|C:\\Users\\jocel\\Documents\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\fire_frag.frag||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{93B17D41-D29D-40A1-AC95-9120A3DF514E}|WildfireOpenGL.vcxproj|solutionrelative:fire_frag.frag||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,19 +22,49 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "C:\\Users\\tonyy\\Documents\\School-Work\\VIP\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\main.cpp",
+              "DocumentMoniker": "C:\\Users\\jocel\\Documents\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "C:\\Users\\tonyy\\Documents\\School-Work\\VIP\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\main.cpp",
-              "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\jocel\\Documents\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\main.cpp*",
+              "RelativeToolTip": "main.cpp*",
+              "ViewState": "AQIAAIYAAAAAAAAAAADgv5IAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-08T22:49:44.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "fire_vert.vert",
+              "DocumentMoniker": "C:\\Users\\jocel\\Documents\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\fire_vert.vert",
+              "RelativeDocumentMoniker": "fire_vert.vert",
+              "ToolTip": "C:\\Users\\jocel\\Documents\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\fire_vert.vert",
+              "RelativeToolTip": "fire_vert.vert",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-19T22:59:43.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "fire_frag.frag",
+              "DocumentMoniker": "C:\\Users\\jocel\\Documents\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\fire_frag.frag",
+              "RelativeDocumentMoniker": "fire_frag.frag",
+              "ToolTip": "C:\\Users\\jocel\\Documents\\wildfire-VIP\\WildfireRenderer\\WildfireOpenGL\\fire_frag.frag",
+              "RelativeToolTip": "fire_frag.frag",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-10-19T22:58:48.533Z",
               "EditorCaption": ""
             }
           ]
